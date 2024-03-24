@@ -1,3 +1,11 @@
+# Autor: Jesús Martínez Leal
+# Fecha de última edición: 24/03/2023
+# Descripción: Este script muestra un conejito en 3D con 9 subplots, cada uno con una modificación diferente del conejito
+
+
+
+# Importación de librerías necesarias
+
 import pyvista as pv
 from pyvista import examples
 
@@ -9,9 +17,12 @@ bunny = pv.read('bunny.stl')
 #    (0.0243, 0.0336, -0.0222),
 #    (-0.2148, 0.8998, -0.3796)] descomentar esto para usar el menos pesado
 
+# Crear una copia del conejito para modificarlo sin afectar al original
+
 bunnymod = bunny.copy()
 
 bunny['altura'] = bunny.points[:, 2]
+
 
 plotter = pv.Plotter(shape = (3, 3)) # Definimos la forma en subplots
 
